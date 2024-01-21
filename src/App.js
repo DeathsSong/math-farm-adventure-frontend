@@ -1,14 +1,20 @@
 
 import './App.css';
+import React from 'react';
+import GameForm from './components/GameForm';
 
-function App() {
+const App = () => {
+  const handleGameSubmit = (playerName) => {
+    console.log('Player Name:', playerName);
+    console.log('Form submitted! Player Name:', playerName);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-    
-      </header>
+    <div>
+      <h1>Math Farm Adventure</h1>
+      <GameForm onGameSubmit={handleGameSubmit} />
     </div>
   );
-}
+};
 
 export default App;
