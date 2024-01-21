@@ -1,10 +1,10 @@
-// App.js
+// AppRouter.js
 import React from 'react';
-import GameForm from './components/GameForm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GamePage from './components/GamePage';
+import GameForm from '../components/GameForm';
+import GamePage from '../components/GamePage';
 
-const App = () => {
+const AppRouter = () => {
   return (
     <Router>
       <Routes>
@@ -15,4 +15,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AppRouter;
