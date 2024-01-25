@@ -16,25 +16,55 @@ div {
 }
 
 .addition {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: relative;
+  top: -5px;
+  left: 18px;
+  width: 200px;
+  height: 225px;
+  background: unset;
+  border: unset;
+  cursor: pointer;
 }
 
 .subtraction {
-    position: fixed;
-    top: 0;
-    right: 0;
-}
+  position: relative;
+  top: -5px;
+  left: 337px;
+  width: 200px;
+  height: 162px;
+  background: unset;
+  cursor: pointer;
+  border: unset;
+  }
 
 .multiplication {
-    position: fixed;
-    bottom: 0px;
-    left: 0;
+  position: relative;
+  top: 508px;
+  right: 369px;
+  width: 181px;
+  height: 158px;
+  background: unset;
+  cursor: pointer;
+  border: unset;
 }
 
 .division {
-    position: fixed;
-    bottom: 0px;
-    right: 0;
+  position: relative;
+  top: 502px;
+  right: 30px;
+  width: 184px;
+  height: 184px;
+  background: unset;
+  cursor: pointer;
+  border: unset;
+}
+
+.farm-background {
+  background-image: url(http://localhost:3000/static/media/farm_map.e3a83430132214698857.png);
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 790px;
+  height: 789px;
 }

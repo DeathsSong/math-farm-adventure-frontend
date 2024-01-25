@@ -4,6 +4,8 @@ import axios from "axios";
 
 const DivisionProblem = () => {
   const [problem, setProblem] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [isCorrect, setIsCorrect] = useState(null);
 
   useEffect(() => {
     const fetchProblem = async () => {
@@ -18,6 +20,20 @@ const DivisionProblem = () => {
     fetchProblem();
   }, []);
 
+  const handleAnswerSelection = (selectedOption) => {
+    setSelectedAnswer(selectedOption);
+  
+    const correctOption = String(problem.correctOption);
+    const isCorrect = String(selectedOption) === correctOption;
+    setIsCorrect(isCorrect);
+  
+    if (isCorrect) {
+      console.log('Correct answer!');
+    } else {
+      console.log('Incorrect answer. Try again!');
+    }
+  };
+
   if (!problem) {
     return <div>Loading...</div>;
   }
@@ -27,9 +43,13 @@ const DivisionProblem = () => {
       <h2>{problem.question}</h2>
       <ul>
         {problem.options.map((option, index) => (
-          <li key={index}>{option}</li>
+          <li key={index} onClick={() => handleAnswerSelection(option)}>
+          {option}
+        </li>
         ))}
       </ul>
+      <p>{selectedAnswer !== null && `Selected Answer: ${selectedAnswer}`}</p>
+      {isCorrect !== null && <p>{isCorrect ? 'Correct answer!' : 'Incorrect answer. Try again!'}</p>}
     </div>
   );
 };

@@ -30,7 +30,8 @@ const GamePage = () => {
   };
 
   return (
-    <div>
+    <div className='game-page'>
+      <div className='farm-background'></div>
       <button className='addition' onClick={() => handleLinkClick('addition')}>
         Addition
       </button>
