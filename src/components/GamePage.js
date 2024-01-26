@@ -4,6 +4,16 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const GamePage = () => {
   const navigate = useNavigate();
+  
+  
+  
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    setModalOpen(true);
+  }, []);
+
+
 
   const fetchProblems = async (type) => {
     try {
@@ -12,22 +22,28 @@ const GamePage = () => {
         const data = await response.json();
         return data;
       } else {
-        console.error(`Failed to fetch ${type} problems.`);
         return [];
       }
     } catch (error) {
-      console.error(`Error fetching ${type} problems:`, error);
       return [];
     }
   };
 
   const handleLinkClick = async (type) => {
     const problems = await fetchProblems(type);
-    // Do something with the fetched problems (e.g., navigate to a new page)
-    console.log(`${type} problems:`, problems);
-    // You can customize this logic based on your requirements
     navigate(`/problems/${type}`);
   };
+
+
+const handleModalOpen = () => {
+  setModalOpen(true);
+};
+
+const handleModalClose = () => {
+  setModalOpen(false);
+};
+
+
 
   return (
     <div className='game-page'>
@@ -44,6 +60,23 @@ const GamePage = () => {
       <button className='division' onClick={() => handleLinkClick('division')}>
         Division
       </button>
+
+
+      {isModalOpen && (
+        <div className='instruction-modal'>
+          <button className='close-modal-button' autoFocus onClick={handleModalClose}>Close Instructions</button>
+          <div className='modal-text'>
+            <p>Welcome to (insert farm name here) Farm, (insert player name here)! We have some work to do here to take care of everything.</p>
+            <p>In order to get the chores done, we have to answer some math questions! Click on a section of farm, and answer the question to get that chore done.</p>
+            <p>If you need to see this message again, click on your house in the middle of the farm.</p>
+            <p>Good luck, and happy learning!</p>
+          </div>
+        </div>
+      )}
+      <button className='open-modal-button' onClick={handleModalOpen}>Show Modal</button>
+
+
+
     </div>
   );
 };

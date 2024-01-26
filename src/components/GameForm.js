@@ -39,7 +39,7 @@ const GameForm = () => {
       <h1>Hello Farmer!</h1>
       <h2>Please start by telling us your name and what you'd like to call your farm!</h2>
     <form className='input-forms' onSubmit={handleSubmit}>
-      {/* Input fields for playerName and farmName */}
+      
       <input
         type="text"
         placeholder="Enter Player Name"
