@@ -38,12 +38,8 @@ const SubtractionProblem = () => {
     return <div>Loading...</div>;
   }
 
-  if (!problem) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="subtraction">
+    <div className="subtraction-page">
       <h2>{problem.question}</h2>
       <ul>
         {problem.options.map((option, index) => (

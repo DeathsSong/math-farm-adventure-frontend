@@ -39,7 +39,7 @@ const MultiplicationProblem = () => {
   }
 
   return (
-    <div className="multiplication">
+    <div className="multiplication-page">
       <h2>{problem.question}</h2>
       <ul>
         {problem.options.map((option, index) => (

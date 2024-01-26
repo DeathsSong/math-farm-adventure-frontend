@@ -1,0 +1,41 @@
+.addition-page {
+    text-align: center;
+}
+
+.addition-background {
+    background-image: url('../../public/just-barn.png');
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 790px;
+    height: 789px;
+}
+
+.addition-answers {
+    cursor: pointer;
+    background-color: rgba(28, 214, 211, 0.7);
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    display: inline;
+}
+
+.addition-question-and-answers {
+        position: relative;
+    top: 250px;
+    background-color: rgba(199, 214, 28, 0.7);
+    width: 230px;
+    left: 237px;
+    height: 80px;
+}
+
+.question-asker {
+    position: relative;
+    background-color: rgba(199, 214, 28, 0.7);
+}
+
+.answer-result {
+    position: relative;
+    background-color: rgba(199, 214, 28, 0.7);
+}

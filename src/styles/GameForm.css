@@ -8,3 +8,30 @@ input {
     padding: 10px;
     cursor: pointer;
   }
+
+.game-form {
+  background-image: url('https://cdn.dribbble.com/userupload/11694627/file/original-ab92e3a0088374e65ea9a30e4d1c586e.gif');
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 790px;
+  height: 789px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.input-forms {
+  text-align: center;
+}
+
+.start-game-button {
+  border-radius: 20%;
+  cursor: pointer;
+}

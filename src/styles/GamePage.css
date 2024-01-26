@@ -60,7 +60,7 @@ div {
 }
 
 .farm-background {
-  background-image: url(http://localhost:3000/static/media/farm_map.e3a83430132214698857.png);
+  background-image: url(../../public/farm_map.png);
   position: absolute;
   background-size: cover;
   top: 0;

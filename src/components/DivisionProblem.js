@@ -39,7 +39,7 @@ const DivisionProblem = () => {
   }
 
   return (
-    <div className="division">
+    <div className="division-page">
       <h2>{problem.question}</h2>
       <ul>
         {problem.options.map((option, index) => (

@@ -35,7 +35,10 @@ const GameForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className='game-form'>
+      <h1>Hello Farmer!</h1>
+      <h2>Please start by telling us your name and what you'd like to call your farm!</h2>
+    <form className='input-forms' onSubmit={handleSubmit}>
       {/* Input fields for playerName and farmName */}
       <input
         type="text"
@@ -50,9 +53,9 @@ const GameForm = () => {
         onChange={(e) => setFarmName(e.target.value)}
       />
 
-      {/* Submit button */}
-      <button type="submit">Submit</button>
+      <button className='start-game-button' type="submit">Let's Go!</button>
     </form>
+    </div>
   );
 };
 

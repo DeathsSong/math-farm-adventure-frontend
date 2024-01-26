@@ -1,6 +1,7 @@
 // AdditionProblem.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import '../styles/AdditionProblem.css'
 
 const AdditionProblem = () => {
   const [problem, setProblem] = useState(null);
@@ -39,17 +40,23 @@ const AdditionProblem = () => {
   }
 
   return (
-    <div className="addition">
+    <div className="addition-page">
+      <div className='addition-background'></div>
+      <h1 className="question-asker">Oh no! The barn is closed and the cows need to be let out and fed! The only way you can do that is by solving the equation below</h1>
+      <div className="addition-question-and-answers">
       <h2>{problem.question}</h2>
       <ul>
         {problem.options.map((option, index) => (
-          <li key={index} onClick={() => handleAnswerSelection(option)}>
+          <li className="addition-answers" key={index} onClick={() => handleAnswerSelection(option)}>
             {option}
           </li>
         ))}
       </ul>
+      <div className="answer-result">
       <p>{selectedAnswer !== null && `Selected Answer: ${selectedAnswer}`}</p>
       {isCorrect !== null && <p>{isCorrect ? 'Correct answer!' : 'Incorrect answer. Try again!'}</p>}
+      </div>
+      </div>
     </div>
   );
 };
