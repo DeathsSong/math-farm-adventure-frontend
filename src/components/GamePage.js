@@ -6,9 +6,8 @@ const GamePage = () => {
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
 
-  
-  
   const [barnComplete, setBarnComplete] = useState(false);
+  const [chickenComplete, setChickenComplete] = useState(false);
 
 
   useEffect(() => {
@@ -18,6 +17,7 @@ const GamePage = () => {
         const data = await response.json();
         if (response.ok) {
           setBarnComplete(data.barnComplete);
+          setChickenComplete(data.chickenComplete);
         } else {
           console.error("Failed to fetch barnComplete:", data);
         }
@@ -29,13 +29,6 @@ const GamePage = () => {
     fetchData();
     setModalOpen(true);
   }, []);
-
-
-useEffect(() => {
-  if (barnComplete) {
-
-  }
-}, [barnComplete])
 
 
   const handleLinkClick = async (type) => {
@@ -55,16 +48,21 @@ const handleModalClose = () => {
 
   return (
     <div className='game-page'>
-      
-      {barnComplete ? (
-        <div className="farm-background">
-          <p>Barn is Complete</p>
-        </div>
-      ) : (
-        <div className="farm-background">
-          <p>Work on completing the barn!</p>
+      <div className='farm-background'/>
+
+      {barnComplete && (
+        <div className='barn-overlay'>
+          <img src='./completed-barn.gif' alt='Barn' />
         </div>
       )}
+
+      {chickenComplete && (
+        <div className='chicken-overlay'>
+          <img src='./chicken-coop-with-chickens.gif' alt='Chickens'/>
+          </div>
+      )}
+
+
 
       <button className='addition' onClick={() => handleLinkClick('addition')}>
       </button>
@@ -76,11 +74,15 @@ const handleModalClose = () => {
       </button>
 
 
+
+      
+
+
       {isModalOpen && (
         <div className='instruction-modal'>
           <button className='close-modal-button' autoFocus onClick={handleModalClose}>Close Instructions</button>
           <div className='modal-text'>
-            <p>Welcome to (insert farm name here) Farm, (insert player name here)! We have some work to do here to take care of everything.</p>
+            <p>Welcome to your Farm! We have some work to do here to take care of everything.</p>
             <p>In order to get the chores done, we have to answer some math questions! Click on a section of farm, and answer the question to get that chore done.</p>
             <p>If you need to see this message again, click on your house in the middle of the farm.</p>
             <p>Good luck, and happy learning!</p>

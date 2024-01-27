@@ -1,11 +1,14 @@
 // SubtractionProblem.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import '../styles/SubtractionProblem.css';
+import { useNavigate } from "react-router-dom";
 
 const SubtractionProblem = () => {
   const [problem, setProblem] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProblem = async () => {
