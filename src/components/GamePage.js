@@ -9,6 +9,7 @@ const GamePage = () => {
   const [barnComplete, setBarnComplete] = useState(false);
   const [chickenComplete, setChickenComplete] = useState(false);
   const [cropComplete, setCropComplete] = useState(false);
+  const [penComplete, setPenComplete] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +20,7 @@ const GamePage = () => {
           setBarnComplete(data.barnComplete);
           setChickenComplete(data.chickenComplete);
           setCropComplete(data.cropComplete);
+          setPenComplete(data.penComplete);
         } else {
           console.error("Failed to fetch barnComplete:", data);
         }
@@ -66,6 +68,12 @@ const handleModalClose = () => {
       {cropComplete && (
         <div className='crop-overlay'>
           <img src='./crop-grown.png' alt='grown-crop'/>
+          </div>
+      )}
+
+      {penComplete && (
+        <div className='pen-overlay'>
+          <img src='./completed-field.gif' alt='pig-pen'/>
           </div>
       )}
 

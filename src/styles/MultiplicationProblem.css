@@ -1,0 +1,44 @@
+.addition-page {
+    text-align: center;
+}
+
+.multiplication-background {
+    background-image: url('../../public/field.png');
+    position: relative;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 790px;
+    height: 789px;
+}
+
+.multiplication-answers {
+    cursor: pointer;
+    background-color: rgba(28, 214, 211, 0.7);
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    display: inline;
+}
+
+.multiplication-question-and-answers {
+    position: relative;
+    bottom: 526px;
+    background-color: rgba(199, 214, 28, 0.7);
+    width: 230px;
+    left: 281px;
+    height: 80px;
+}
+
+.question-asker {
+    position: relative;
+    background-color: rgba(199, 214, 28, 0.7);
+    bottom: 668px;
+    left: 98px;
+    width: 600px;
+}
+
+.answer-result {
+    position: relative;
+    background-color: rgba(199, 214, 28, 0.7);
+}
