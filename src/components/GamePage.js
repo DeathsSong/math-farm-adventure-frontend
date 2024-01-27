@@ -49,16 +49,12 @@ const handleModalClose = () => {
     <div className='game-page'>
       <div className='farm-background'></div>
       <button className='addition' onClick={() => handleLinkClick('addition')}>
-        Addition
       </button>
       <button className='subtraction' onClick={() => handleLinkClick('subtraction')}>
-        Subtraction
       </button>
       <button className='multiplication' onClick={() => handleLinkClick('multiplication')}>
-        Multiplication
       </button>
       <button className='division' onClick={() => handleLinkClick('division')}>
-        Division
       </button>
 
 
@@ -73,7 +69,7 @@ const handleModalClose = () => {
           </div>
         </div>
       )}
-      <button className='open-modal-button' onClick={handleModalOpen}>Show Modal</button>
+      <button className='open-modal-button' onClick={handleModalOpen}></button>
 
 
 

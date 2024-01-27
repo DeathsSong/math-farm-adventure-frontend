@@ -11,12 +11,13 @@ input {
 
 .game-form {
   background-image: url('https://cdn.dribbble.com/userupload/11694627/file/original-ab92e3a0088374e65ea9a30e4d1c586e.gif');
-  position: absolute;
+  position: relative;
   background-size: cover;
   top: 0;
   left: 0;
   width: 790px;
   height: 789px;
+  margin: -24px;
 }
 
 h1 {

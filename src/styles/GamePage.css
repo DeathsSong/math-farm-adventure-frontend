@@ -17,8 +17,8 @@ div {
 
 .addition {
   position: relative;
-  top: -5px;
-  left: 18px;
+  top: -788px;
+  left: 29px;
   width: 200px;
   height: 225px;
   background: unset;
@@ -28,8 +28,8 @@ div {
 
 .subtraction {
   position: relative;
-  top: -5px;
-  left: 337px;
+  top: -819px;
+  left: 345px;
   width: 200px;
   height: 162px;
   background: unset;
@@ -39,10 +39,10 @@ div {
 
 .multiplication {
   position: relative;
-  top: 508px;
-  right: 369px;
+  bottom: 307px;
+  left: -361px;
   width: 181px;
-  height: 158px;
+  height: 160px;
   background: unset;
   cursor: pointer;
   border: unset;
@@ -50,8 +50,8 @@ div {
 
 .division {
   position: relative;
-  top: 502px;
-  right: 30px;
+  top: -484px;
+  right: -559px;
   width: 184px;
   height: 184px;
   background: unset;
@@ -61,7 +61,7 @@ div {
 
 .farm-background {
   background-image: url(../../public/farm_map.png);
-  position: absolute;
+  position: relative;
   background-size: cover;
   top: 0;
   left: 0;
@@ -75,8 +75,8 @@ div {
 
 .open-modal-button {
   position: relative;
-  top: 58px;
-  left: 322px;
+  top: -764px;
+  left: 146px;
   width: 86px;
   height: 144px;
   background: unset;
@@ -84,18 +84,18 @@ div {
 }
 
 .close-modal-button {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  left: 325px;
-  top: 280px;
+  left: 309px;
+  top: -724px;
   border-radius: 25%;
 }
 
 .modal-text {
-  position: absolute;
+  position: relative;
   z-index: 1;
   background-color: rgb(198, 166, 36);
   width: 772px;
   text-align: center;
-  top: 58px;
+  top: -965px;
 }

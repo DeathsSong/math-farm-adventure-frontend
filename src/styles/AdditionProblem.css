@@ -4,7 +4,7 @@
 
 .addition-background {
     background-image: url('../../public/just-barn.png');
-    position: absolute;
+    position: relative;
     background-size: cover;
     top: 0;
     left: 0;
@@ -22,17 +22,20 @@
 }
 
 .addition-question-and-answers {
-        position: relative;
-    top: 250px;
+    position: relative;
+    bottom: 526px;
     background-color: rgba(199, 214, 28, 0.7);
     width: 230px;
-    left: 237px;
+    left: 281px;
     height: 80px;
 }
 
 .question-asker {
     position: relative;
     background-color: rgba(199, 214, 28, 0.7);
+    bottom: 668px;
+    left: 98px;
+    width: 600px;
 }
 
 .answer-result {
