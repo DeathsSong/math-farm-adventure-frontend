@@ -1,12 +1,15 @@
 // AdditionProblem.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import '../styles/AdditionProblem.css'
+import '../styles/AdditionProblem.css';
+import {useNavigate} from 'react-router-dom';
 
 const AdditionProblem = () => {
   const [problem, setProblem] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
+
+  const navigate = useNavigate();  
 
   useEffect(() => {
     const fetchProblem = async () => {
@@ -21,7 +24,7 @@ const AdditionProblem = () => {
     fetchProblem();
   }, []);
 
-  const handleAnswerSelection = (selectedOption) => {
+  const handleAnswerSelection = async (selectedOption) => {
     setSelectedAnswer(selectedOption);
   
     const correctOption = String(problem.correctOption);
@@ -29,11 +32,25 @@ const AdditionProblem = () => {
     setIsCorrect(isCorrect);
   
     if (isCorrect) {
-      console.log('Correct answer!');
+
+      try {
+        await axios.post("http://localhost:5000/api/barnComplete", {
+          barnComplete: true,
+        });
+  
+        console.log('Correct answer!');
+      } catch (error) {
+        console.error("Failed to change barnComplete to true:", error.message);
+      }
     } else {
       console.log('Incorrect answer. Try again!');
     }
   };
+
+const handleNavigate = () => {
+  navigate('/game')
+}
+
 
   if (!problem) {
     return <div>Loading...</div>;
@@ -54,7 +71,7 @@ const AdditionProblem = () => {
       </ul>
       <div className="answer-result">
       <p>{selectedAnswer !== null && `Selected Answer: ${selectedAnswer}`}</p>
-      {isCorrect !== null && <p>{isCorrect ? 'Correct answer!' : 'Incorrect answer. Try again!'}</p>}
+      {isCorrect && <button className="correct-answer-button" onClick={handleNavigate}>That was correct!</button>}
       </div>
       </div>
     </div>

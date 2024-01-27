@@ -13,7 +13,7 @@ const GameForm = () => {
 
     if (playerName && farmName) {
       // Both player name and farm name are filled out, proceed with the fetch call
-      const response = await fetch('http://localhost:5000/api/games', {
+      const response = await fetch('http://localhost:5000/api/game', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

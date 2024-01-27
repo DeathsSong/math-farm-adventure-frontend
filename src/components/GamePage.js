@@ -1,36 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/GamePage.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const GamePage = () => {
   const navigate = useNavigate();
-  
-  
-  
   const [isModalOpen, setModalOpen] = useState(false);
 
+  
+  
+  const [barnComplete, setBarnComplete] = useState(false);
+
+
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/game");
+        const data = await response.json();
+        if (response.ok) {
+          setBarnComplete(data.barnComplete);
+        } else {
+          console.error("Failed to fetch barnComplete:", data);
+        }
+      } catch (error) {
+        console.error("Error while fetching barnComplete:", error.message);
+      }
+    };
+  
+    fetchData();
     setModalOpen(true);
   }, []);
 
 
+useEffect(() => {
+  if (barnComplete) {
 
-  const fetchProblems = async (type) => {
-    try {
-      const response = await fetch(`http://localhost:5000/api/problems/${type}`);
-      if (response.ok) {
-        const data = await response.json();
-        return data;
-      } else {
-        return [];
-      }
-    } catch (error) {
-      return [];
-    }
-  };
+  }
+}, [barnComplete])
+
 
   const handleLinkClick = async (type) => {
-    const problems = await fetchProblems(type);
     navigate(`/problems/${type}`);
   };
 
@@ -47,7 +55,17 @@ const handleModalClose = () => {
 
   return (
     <div className='game-page'>
-      <div className='farm-background'></div>
+      
+      {barnComplete ? (
+        <div className="farm-background">
+          <p>Barn is Complete</p>
+        </div>
+      ) : (
+        <div className="farm-background">
+          <p>Work on completing the barn!</p>
+        </div>
+      )}
+
       <button className='addition' onClick={() => handleLinkClick('addition')}>
       </button>
       <button className='subtraction' onClick={() => handleLinkClick('subtraction')}>
@@ -71,7 +89,7 @@ const handleModalClose = () => {
       )}
       <button className='open-modal-button' onClick={handleModalOpen}></button>
 
-
+        
 
     </div>
   );
