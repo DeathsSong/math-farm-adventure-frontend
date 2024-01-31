@@ -8,6 +8,7 @@ import SubtractionProblem from './components/SubtractionProblem';
 import MultiplicationProblem from './components/MultiplicationProblem';
 import DivisionProblem from './components/DivisionProblem';
 import '../src/styles/App.css'
+import AdminPage from './components/AdminPage';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/problems/subtraction" element={<SubtractionProblem/>}></Route>
         <Route path="/problems/multiplication" element={<MultiplicationProblem/>}></Route>
         <Route path="/problems/division" element={<DivisionProblem/>}></Route>
+        <Route path="/admin" element={<AdminPage/>}></Route>
       </Routes>
     </Router>
   );
